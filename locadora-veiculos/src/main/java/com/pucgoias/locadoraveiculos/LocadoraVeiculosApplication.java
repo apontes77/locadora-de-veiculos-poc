@@ -44,7 +44,7 @@ public class LocadoraVeiculosApplication implements CommandLineRunner {
 		Funcionario f1 = new Funcionario(null, "RONALDO", LocalDate.now(), "283.595.901-76", "PERDEDOR DE TEMPO", "00000066666", List.of(al1));
 
 
-		Automovel a1 = new Automovel(null, BigDecimal.TEN, "PUC666", "PUC CHEVETE", "CHEVROLET", "12", "grande", "diesel", "automatico", "LOCADO", BigDecimal.valueOf(45.89), List.of(al1));
+		Automovel a1 = new Automovel(null, BigDecimal.TEN, "PUC666", "PUC CHEVETE", "CHEVROLET", "12", "grande", "diesel", "automatico", "LOCADO", BigDecimal.valueOf(45.8), List.of(al1));
 
 		Aluguel aluguelSalvo = aluguelRepository.save(al1);
 		Automovel automovelSalvo = automovelRepository.save(a1);
