@@ -4,11 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -18,6 +17,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cliente")
     private Long id;
     private String nome;
     private LocalDate dataNascimento;
@@ -25,4 +25,7 @@ public class Cliente {
     private String endereco;
     private String telefone;
     private String cartaoCredito;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Aluguel> alugueis = new ArrayList<>();
 }
