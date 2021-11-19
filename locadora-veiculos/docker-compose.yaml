@@ -18,7 +18,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=test
+      - POSTGRES_DB=locadora_veiculos
 
   pgadmin-compose_loc:
     image: fenglc/pgadmin4:latest
