@@ -1,0 +1,33 @@
+version: '3.8'
+
+volumes:
+  postgres_loc:
+
+networks:
+  postgres_net_loc:
+
+services:
+  postgres_loc:
+    image: postgres:14.0
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_loc:/vol/postgresql/data
+    networks:
+      - postgres_net_loc
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test
+
+  pgadmin-compose_loc:
+    image: fenglc/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:5050"
+    networks:
+      - postgres_net_loc
+    depends_on:
+      - postgres_loc

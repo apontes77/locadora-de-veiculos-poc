@@ -1,5 +1,8 @@
 package com.pucgoias.locadoraveiculos.domain;
 
+import com.pucgoias.locadoraveiculos.domain.enums.StatusLocacao;
+import com.pucgoias.locadoraveiculos.domain.enums.TipoCambio;
+import com.pucgoias.locadoraveiculos.domain.enums.TipoCombustivel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,9 +32,12 @@ public class Automovel {
     private String capacidadePessoa;
     @Column(name = "tamanho_portamala")
     private String tamanhoPortaMala;
-    private String tipoCombustivel;
-    private String tipoCambio;
-    private String statusLocacao;
+    @Enumerated(EnumType.STRING)
+    private TipoCombustivel tipoCombustivel;
+    @Enumerated(EnumType.STRING)
+    private TipoCambio tipoCambio;
+    @Enumerated(EnumType.STRING)
+    private StatusLocacao statusLocacao;
     private BigDecimal capacidadeTanque;
 
     @OneToMany(fetch = FetchType.LAZY)
