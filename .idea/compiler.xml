@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="locadora-veiculos" target="17" />
+      <module name="locadora-veiculos" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

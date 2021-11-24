@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+
 @SpringBootApplication
 @AllArgsConstructor
 public class LocadoraVeiculosApplication implements CommandLineRunner {
