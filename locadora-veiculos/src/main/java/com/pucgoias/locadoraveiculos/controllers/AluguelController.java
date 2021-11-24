@@ -22,13 +22,13 @@ public class AluguelController {
         return aluguelRepository.findAll();
     }
 
-    @PostMapping("/inserir")
+    @PostMapping
     @Transactional
     public Aluguel postAluguel(@RequestBody Aluguel aluguel) {
         return aluguelRepository.save(aluguel);
     }
 
-    @PutMapping("/atualizar/{id}")
+    @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<?> updateAluguel(@RequestBody Aluguel aluguel, @PathVariable Long id){
         Optional<Aluguel> antigoAluguel = aluguelRepository.findById(id);
@@ -39,7 +39,7 @@ public class AluguelController {
         return new ResponseEntity<Aluguel>(aluguel, HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
+    @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<String> deleteAluguel(@PathVariable Long id) {
         Optional<Aluguel> aluguel = aluguelRepository.findById(id);

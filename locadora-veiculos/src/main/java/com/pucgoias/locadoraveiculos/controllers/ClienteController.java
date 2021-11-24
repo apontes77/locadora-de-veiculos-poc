@@ -23,13 +23,13 @@ public class ClienteController {
         return clienteRepository.findAll();
     }
 
-    @PostMapping("/inserir")
+    @PostMapping
     @Transactional
     public Cliente postCliente(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
-    @PutMapping("/atualizar/{id}")
+    @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<?> updateCliente(@RequestBody Cliente cliente, @PathVariable Long id){
         Optional<Cliente> antigoCliente = clienteRepository.findById(id);
@@ -40,7 +40,7 @@ public class ClienteController {
         return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
+    @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<String> deleteCliente(@PathVariable Long id) {
         Optional<Cliente> cliente = clienteRepository.findById(id);

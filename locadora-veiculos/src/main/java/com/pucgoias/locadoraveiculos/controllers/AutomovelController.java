@@ -27,13 +27,13 @@ public class AutomovelController {
         return automovelRepository.findAll();
     }
 
-    @PostMapping("/inserir")
+    @PostMapping
     @Transactional
     public Automovel postAutomovel(@RequestBody Automovel automovel) {
         return automovelRepository.save(automovel);
     }
 
-    @PutMapping("/atualizar/{id}")
+    @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<?> updateAutomovel(@RequestBody Automovel automovel, @PathVariable Long id){
         Optional<Automovel> antigoAutomovel = automovelRepository.findById(id);
@@ -44,7 +44,7 @@ public class AutomovelController {
         return new ResponseEntity<Automovel>(automovel, HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
+    @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<String> deleteAutomovel(@PathVariable Long id) {
         Optional<Automovel> automovel = automovelRepository.findById(id);
