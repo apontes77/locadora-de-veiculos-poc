@@ -22,7 +22,7 @@ public class AluguelController {
         return aluguelRepository.findAll();
     }
 
-    @PostMapping()
+    @PostMapping
     @Transactional
     public Aluguel postAluguel(@RequestBody Aluguel aluguel) {
         return aluguelRepository.save(aluguel);

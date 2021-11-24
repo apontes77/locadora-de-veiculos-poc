@@ -23,7 +23,7 @@ public class ClienteController {
         return clienteRepository.findAll();
     }
 
-    @PostMapping()
+    @PostMapping
     @Transactional
     public Cliente postCliente(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);

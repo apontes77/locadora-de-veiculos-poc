@@ -24,7 +24,7 @@ public class FuncionarioController {
         return funcionarioRepository.findAll();
     }
 
-    @PostMapping()
+    @PostMapping
     @Transactional
     public Funcionario postFuncionario(@RequestBody Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
