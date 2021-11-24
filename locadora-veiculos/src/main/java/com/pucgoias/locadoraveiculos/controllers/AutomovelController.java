@@ -27,6 +27,7 @@ public class AutomovelController {
         return automovelRepository.findAll();
     }
 
+    @PostMapping()
     @Transactional
     public Automovel postAutomovel(@RequestBody Automovel automovel) {
         return automovelRepository.save(automovel);
