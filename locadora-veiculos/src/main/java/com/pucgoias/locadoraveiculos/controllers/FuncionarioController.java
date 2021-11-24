@@ -24,13 +24,12 @@ public class FuncionarioController {
         return funcionarioRepository.findAll();
     }
 
-    @PostMapping("/inserir")
     @Transactional
     public Funcionario postFuncionario(@RequestBody Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
 
-    @PutMapping("/atualizar/{id}")
+    @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<?> updateFuncionario(@RequestBody Funcionario funcionario, @PathVariable Long id){
         Optional<Funcionario> antigoFuncionario = funcionarioRepository.findById(id);
@@ -41,7 +40,7 @@ public class FuncionarioController {
         return new ResponseEntity<Funcionario>(funcionario, HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
+    @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<String> deleteFuncionario(@PathVariable Long id) {
         Optional<Funcionario> funcionario = funcionarioRepository.findById(id);
