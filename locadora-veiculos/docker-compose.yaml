@@ -3,6 +3,7 @@ version: '3.8'
 volumes:
   postgres_loc:
 
+
 networks:
   postgres_net_loc:
 

@@ -37,13 +37,13 @@ public class LocadoraVeiculosApplication implements CommandLineRunner {
 		Aluguel al1 = new Aluguel(null, LocalDate.now(), LocalDate.of(2020, 12, 01), 12, formataDecimal(new BigDecimal(123.89)));
 
 
-		Cliente c1 = new Cliente(null, "JORIVER", LocalDate.now(), "033.545.611-14", "Avenida Universitaria", "3245221333", "1234567890", List.of(al1));
+		Cliente c1 = new Cliente(null, "Bob Green", LocalDate.now(), "033.545.611-14", "Avenida Universitaria, SN", "3245221333", "1234567890", List.of(al1));
 
 
-		Funcionario f1 = new Funcionario(null, "RONALDO", LocalDate.now(), "283.595.901-76", "PERDEDOR DE TEMPO", "00000066666", List.of(al1));
+		Funcionario f1 = new Funcionario(null, "Rudolph James", LocalDate.now(), "283.595.901-76", "PROFESSOR", "00000066666", List.of(al1));
 
 
-		Automovel a1 = new Automovel(null, formataDecimal(BigDecimal.TEN), "PUC666", "PUC CHEVETE", "CHEVROLET", "12", "grande",
+		Automovel a1 = new Automovel(null, formataDecimal(BigDecimal.TEN), "PRV1278", "MERIVA", "CHEVROLET", "12", "GRANDE",
 									TipoCombustivel.GASOLINA, TipoCambio.AUTOMATIZADO_DUPLA_EMBREAGEM, StatusLocacao.LOCADO,
 									formataDecimal(BigDecimal.valueOf(45.8)), List.of(al1));
 
@@ -59,7 +59,6 @@ public class LocadoraVeiculosApplication implements CommandLineRunner {
 	}
 
 	public BigDecimal formataDecimal(BigDecimal vlrFator) {
-		BigDecimal numFormatado = vlrFator.setScale(2, BigDecimal.ROUND_UP);
-		return numFormatado;
+		return vlrFator.setScale(2, BigDecimal.ROUND_UP);
 	}
 }
